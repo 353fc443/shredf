@@ -6,3 +6,4 @@ edition = "2018"
 
 [dependencies]
 rand = "0.5"
+structopt = "0.3"

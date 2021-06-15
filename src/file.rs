@@ -9,16 +9,24 @@ pub struct File {
 }
 
 impl File {
-    pub fn wipe(&self) {
+    pub fn wipe(
+        &self,
+        n_passes: usize,
+        remove: bool,
+        exact: bool,
+        zero: bool,
+        verbose: bool,
+        force: bool,
+    ) {
         shred::wipe_file(
             &self.path.display().to_string(),
-            3,
-            true,
+            n_passes,
+            remove,
             Some(self.size),
-            true,
-            true,
-            true,
-            false,
+            exact,
+            zero,
+            verbose,
+            force,
         )
     }
 }
